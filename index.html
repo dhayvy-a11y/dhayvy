@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA & Riscos Biológicos | Pesquisa Aplicada</title>
+    <style>
+        :root {
+            --bg: #090d16;
+            --card-bg: #131c2e;
+            --accent: #00f0ff;
+            --accent-glow: rgba(0, 240, 255, 0.15);
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .menu button {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .menu button:hover, .menu button.active {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+        }
+
+        .secao {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .secao.ativa {
+            display: block;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card-detalhe {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .card-detalhe h3 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .card-detalhe p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🧬 IA & Riscos Biológicos</h1>
+            <p>Pesquisa Aplicada para Apresentação em Grupo</p>
+        </header>
+
+        <!-- Menu de Abas -->
+        <div class="menu">
+            <button class="active" onclick="mudar(0)">Visão Geral</button>
+            <button onclick="mudar(1)">Duplo Uso</button>
+            <button onclick="mudar(2)">Riscos Críticos</button>
+            <button onclick="mudar(3)">Governança</button>
+        </div>
+
+        <!-- 1. Visão Geral -->
+        <div class="secao ativa">
+            <h2>Contexto do Tema</h2>
+            <p>A convergência entre Inteligência Artificial e Biotecnologia representa um dos saltos científicos mais promissores da história, mas acende alertas críticos sobre segurança global.</p>
+            <div class="grid">
+                <div class="card-detalhe">
+                    <h3>Oportunidade Histórica</h3>
+                    <p>IAs aceleram em anos a descoberta de novos medicamentos, vacinas customizadas e enzimas industriais.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>O Desafio de Segurança</h3>
+                    <p>Reduzem barreiras técnicas complexas, permitindo que agentes biológicos perigosos sejam modelados com mais facilidade.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Duplo Uso -->
+        <div class="secao">
+            <h2>O Dilema do Duplo Uso (Dual-Use)</h2>
+            <p>Tecnologias de duplo uso são aquelas desenvolvidas com fins nobres, mas que possuem alto potencial de desvio para fins nocivos e destrutivos.</p>
+            <div class="grid">
+                <div class="card-detalhe">
+                    <h3>Lado Positivo</h3>
+                    <p>Criação rápida de tratamentos para doenças raras e combate a patógenos emergentes globais.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>Lado de Risco</h3>
+                    <p>Democratização de tutoriais e designs genéticos que antes exigiam décadas de experiência laboratorial.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Riscos Críticos -->
+        <div class="secao">
+            <h2>Principais Riscos Mapeados</h2>
+            <p>Especialistas em biosecuridade apontam três frentes críticas de preocupação atual:</p>
+            <div class="grid">
+                <div class="card-detalhe">
+                    <h3>1. Democratização de Ameaças</h3>
+                    <p>Modelos de linguagem conversacionais ajudando usuários a contornar protocolos de segurança e leis de controle biológico.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>2. Patógenos Inéditos</h3>
+                    <p>IAs generativas sugerindo sequências virais e toxinas sintéticas otimizadas que desafiam a imunidade humana.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>3. Ciberbiosecurança</h3>
+                    <p>Ataques cibernéticos direcionados a bases de dados genômicos e sistemas automatizados de síntese de DNA.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Governança -->
+        <div class="secao">
+            <h2>Estratégias de Mitigação e Futuro</h2>
+            <p>Para evitar catástrofes, governos e empresas de tecnologia estão implementando barreiras de contenção urgentes:</p>
+            <div class="grid">
+                <div class="card-detalhe">
+                    <h3>Guardrails de IA</h3>
+                    <p>Filtros avançados e avaliações de risco (*red teaming*) em modelos de fronteira antes de serem liberados ao público.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>Controle de DNA</h3>
+                    <p>Triagem rigorosa de clientes e pedidos em empresas comerciais de síntese de material genético.</p>
+                </div>
+                <div class="card-detalhe">
+                    <h3>Cooperação Global</h3>
+                    <p>Criação de tratados internacionais unificados para fiscalizar o uso ético da biotecnologia assistida por IA.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mudar(indice) {
+            const secoes = document.querySelectorAll('.secao');
+            const botoes = document.querySelectorAll('.menu button');
+
+            secoes.forEach(s => s.classList.remove('ativa'));
+            botoes.forEach(b => b.classList.remove('active'));
+
+            secoes[indice].classList.add('ativa');
+            botoes[indice].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
